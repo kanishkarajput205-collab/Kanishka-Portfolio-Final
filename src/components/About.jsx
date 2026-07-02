@@ -1,13 +1,19 @@
 import React from 'react';
-import stackImage from '../assets/about/kanishka-avatar.png';
+import avatarImage from '../assets/about/kanishka-avatar.png';
+import realImage from '../assets/about/real.jpg';
+import javaLogo from "../assets/about/java.png";
 import { aboutContent } from '../data/portfolioData';
 import { FaPython, FaNodeJs, FaJava } from "react-icons/fa";
 
 // Tech stack SVG icons rendered inline for crisp rendering
 const JavaIcon = () => (
   <div className="flex flex-col items-center gap-2">
-    <FaJava className="text-6xl md:text-7xl text-red-500" />
-    <span className="text-xs font-bold text-white/70 uppercase tracking-wider">
+    <img
+      src={javaLogo}
+      alt="Java"
+      className="w-16 h-16 md:w-20 md:h-20 object-contain"
+    />
+    <span className="text-xs font-bold text-white uppercase tracking-wider">
       Java
     </span>
   </div>
@@ -16,7 +22,7 @@ const JavaIcon = () => (
 const NodeJSIcon = () => (
   <div className="flex flex-col items-center gap-2">
     <FaNodeJs className="text-6xl md:text-7xl text-green-500" />
-    <span className="text-xs font-bold text-white/70 uppercase tracking-wider">
+    <span className="text-xs font-bold text-white/70 uppercase tracking-wider text-center w-full">
       Node.js
     </span>
   </div>
@@ -25,7 +31,7 @@ const NodeJSIcon = () => (
 const PythonIcon = () => (
   <div className="flex flex-col items-center gap-2">
     <FaPython className="text-6xl md:text-7xl text-yellow-400" />
-    <span className="text-xs font-bold text-white/70 uppercase tracking-wider">
+    <span className="text-xs font-bold text-white/70 uppercase tracking-wider text-center w-full">
       Python
     </span>
   </div>
@@ -36,35 +42,68 @@ const PythonIcon = () => (
 const About = () => {
   return (
     <section id="about" className="bg-[#ff2a2a] pt-20 pb-40 px-6 md:px-12 w-full relative overflow-hidden font-sans">
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-16 items-start">
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-28 items-start">
         
-        {/* Left Side: ID Badge and Skills */}
-        <div className="flex flex-col items-center w-full md:w-[350px] shrink-0 mt-12 md:mt-0">
-          
-          <div data-aos="drop-bounce" className="relative flex justify-center w-full">
-            {/* Lanyard string */}
-            <div className="absolute -top-32 left-1/2 w-3 h-40 bg-black transform -translate-x-1/2 shadow-inner z-0"></div>
-            {/* Lanyard clip */}
-            <div className="absolute -top-6 left-1/2 w-6 h-12 bg-gray-300 rounded border border-gray-400 transform -translate-x-1/2 z-10 shadow-[0_2px_10px_rgba(0,0,0,0.3)]"></div>
-            
-            {/* Badge Card */}
-            <div className="bg-gray-900 w-full max-w-[280px] rounded-2xl p-3 shadow-[0_20px_40px_rgba(0,0,0,0.4)] relative z-20 transform -rotate-3 hover:rotate-0 transition-transform duration-500">
-              {/* Cutout Hole */}
-              <div className="absolute -top-3 left-1/2 w-16 h-6 bg-gray-900 rounded-t-xl transform -translate-x-1/2 flex justify-center items-center">
-                <div className="w-8 h-2 bg-black/30 rounded-full shadow-inner"></div>
-              </div>
-              {/* Image Container */}
-              <div className="w-full aspect-[3/4] overflow-hidden rounded-xl bg-gray-800 border-2 border-transparent">
-                <img 
-                  src={stackImage} 
-                  alt="Kanishka Thakur — B.Tech CSE (Data Science) Student"
-                  className="w-full h-full object-cover object-top"
-                />
-              </div>
-            </div>
-          </div>
+        {/* Left Side: Hanging Badges */}
+        <div className="flex justify-center items-start w-full md:w-[420px] shrink-0 mt-12 md:mt-0 md:-ml-16">
 
-        </div>
+{/* Avatar */}
+<div
+  data-aos="drop-bounce"
+  className="relative flex justify-center mr-6"
+>
+  {/* Rope */}
+  <div className="absolute -top-32 left-1/2 w-3 h-40 bg-black -translate-x-1/2"></div>
+
+  {/* Clip */}
+  <div className="absolute -top-6 left-1/2 w-6 h-12 bg-gray-300 rounded border border-gray-400 -translate-x-1/2 z-10"></div>
+
+  {/* Card */}
+  <div className="bg-gray-900 w-[200px] rounded-2xl p-3 shadow-[0_20px_40px_rgba(0,0,0,0.4)] relative z-20 -rotate-3 hover:rotate-0 transition-all duration-500">
+
+    <div className="absolute -top-3 left-1/2 w-16 h-6 bg-gray-900 rounded-t-xl -translate-x-1/2 flex justify-center">
+      <div className="w-8 h-2 bg-black/30 rounded-full mt-2"></div>
+    </div>
+
+    <div className="aspect-[3/4] overflow-hidden rounded-xl">
+      <img
+        src={avatarImage}
+        alt="Avatar"
+        className="w-full h-full object-cover"
+      />
+    </div>
+  </div>
+</div>
+
+{/* Real Photo */}
+<div
+  data-aos="drop-bounce"
+  data-aos-delay="250"
+  className="relative flex justify-center mt-24"
+>
+  {/* Rope */}
+  <div className="absolute -top-32 left-1/2 w-3 h-40 bg-black -translate-x-1/2"></div>
+
+  {/* Clip */}
+  <div className="absolute -top-6 left-1/2 w-6 h-12 bg-gray-300 rounded border border-gray-400 -translate-x-1/2 z-10"></div>
+
+  {/* Card */}
+  <div className="bg-gray-900 w-[220px] rounded-2xl p-3 shadow-[0_20px_40px_rgba(0,0,0,0.4)] relative z-20 rotate-3 hover:rotate-0 transition-all duration-500">
+
+    <div className="absolute -top-3 left-1/2 w-16 h-6 bg-gray-900 rounded-t-xl -translate-x-1/2 flex justify-center">
+      <div className="w-8 h-2 bg-black/30 rounded-full mt-2"></div>
+    </div>
+
+    <div className="aspect-[3/4] overflow-hidden rounded-xl">
+      <img
+        src={realImage}
+        alt="Real Photo"
+        className="w-full h-full object-cover"
+      />
+    </div>
+  </div>
+</div>
+</div>
 
         {/* Right Side: Info Content */}
         <div data-aos="fade-left" data-aos-delay="200" className="flex-1 text-white mt-8 md:mt-0 relative z-20">
